@@ -18,7 +18,7 @@ class User(AbstractUser):
 ```
 
 Add the app containing your user model to `INSTALLED_APPS` - it must be above the `'wagtail.users'` line,
-in order to override Wagtail's built-in templates - and set [AUTH_USER_MODEL](https://docs.djangoproject.com/en/stable/topics/auth/customizing/#substituting-a-custom-user-model) to reference
+in order to override Wagtail's built-in templates - and set [`AUTH_USER_MODEL`](inv:django#auth-custom-user) to reference
 your model. In this example the app is called `myapp` and the model is `User`.
 
 ```python
@@ -95,10 +95,6 @@ be redefined.
 
 ## Creating a custom `UserViewSet`
 
-```{versionadded} 6.2
-The ability to customize the `UserViewSet` was added.
-```
-
 To make use of the custom forms, create a `UserViewSet` subclass.
 
 ```python
@@ -156,10 +152,6 @@ or customize the create and edit templates specifically:
 class UserViewSet(WagtailUserViewSet):
     create_template_name = "myapp/users/create.html"
     edit_template_name = "myapp/users/edit.html"
-```
-
-```{versionchanged} 6.2
-The [`WAGTAIL_USER_EDIT_FORM`, `WAGTAIL_USER_CREATION_FORM`, and `WAGTAIL_USER_CUSTOM_FIELDS` settings](user_form_settings) have been deprecated in favor of customizing the form classes via `UserViewSet.get_form_class()`.
 ```
 
 The group forms and views can be customized in a similar way – see [](customizing_group_views).

@@ -54,7 +54,7 @@ You may also want to join StackOverflow and [follow the Wagtail tag](https://sta
 #### Checklist
 
 ```markdown
--   [ ] Read the community guidelines
+-   [ ] Read the [community guidelines](https://github.com/wagtail/wagtail/blob/main/CODE_OF_CONDUCT.md)
 -   [ ] Join GitHub
 -   [ ] Add your preferred name and image to your GitHub profile
 -   [ ] Join Slack
@@ -350,7 +350,7 @@ Instead, review the issue, understand it and if you feel you can contribute you 
 
 ## Helpful links
 
--   [Django's contributor guide](https://docs.djangoproject.com/en/dev/internals/contributing/) is a helpful resource for contributors, even those not contributing to Wagtail.
+-   [Django's contributor guide](inv:django#internals/contributing/index) is a helpful resource for contributors, even those not contributing to Wagtail.
 -   [MDN's open source etiquette](https://developer.mozilla.org/en-US/docs/MDN/Community/Open_source_etiquette) is a great guideline for how to be a great contributor.
 -   [Learning Git Branching](https://learngitbranching.js.org/) a solid interactive guide to understand how git branching works.
 -   [Hacktoberfest](https://hacktoberfest.com/) every October, join in the fun and submit pull requests.

@@ -114,8 +114,10 @@ export default function ComboBox<ComboBoxOption extends ComboBoxItem>({
       }
     },
 
-    // For not re-setting and not removing focus from combobox when pressing `Alt+Tab`
-    // to switch windows.
+    /**
+     * For not re-setting and not removing focus from combobox when pressing `Alt+Tab`
+     * to switch windows.
+     */
     stateReducer: (state, actionAndChanges) => {
       const { type, changes } = actionAndChanges;
       switch (type) {
@@ -217,12 +219,22 @@ export default function ComboBox<ComboBoxOption extends ComboBoxItem>({
                 let icon: JSX.Element | null | undefined = null;
 
                 if (hasIcon) {
-                  icon =
-                    typeof item.icon === 'string' ? (
-                      <Icon name={item.icon} />
-                    ) : (
-                      item.icon
+                  if (Array.isArray(item.icon)) {
+                    icon = (
+                      <Icon name="custom" viewBox="0 0 1024 1024">
+                        {item.icon.map((pathData: string) => (
+                          <path key={pathData} d={pathData} />
+                        ))}
+                      </Icon>
                     );
+                  } else {
+                    icon =
+                      typeof item.icon === 'string' ? (
+                        <Icon name={item.icon} />
+                      ) : (
+                        item.icon
+                      );
+                  }
                 }
 
                 return (
